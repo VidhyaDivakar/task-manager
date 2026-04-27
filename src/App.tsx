@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { TaskList } from './assets/components/TaskList/TaskList';
-//import { TaskFilter } from './assets/components/TaskFilter/TaskFilter';
+import { TaskFilter } from './assets/components/TaskFilter/TaskFilter';
 import type { Task, TaskStatus } from './assets/Types';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   const [tasks, setTasks] = useState<Task[]>([
     {
       id: '1',
-      title: 'Complete assignment',
+      title: 'Task 1',
       description: 'Finish React TypeScript Lab',
       status: 'pending',
       priority: 'high',
@@ -16,7 +16,7 @@ function App() {
     },
   {
       id: '2',
-      title: 'Review code',
+      title: 'Task 2',
       description: 'Check component structure',
       status: 'in-progress',
       priority: 'medium',
@@ -65,9 +65,9 @@ return (
   <div className="max-w-2xl mx-auto mt-8 px-4">
       <h1 className="text-xl font-bold mb-4">Task Manager</h1>
 
-      {/* ✅ Filter <TaskFilter onFilterChange={handleFilterChange} /> */}
+      {/* ✅ Filter  */}
       
-
+<TaskFilter onFilterChange={handleFilterChange} />
       {/* ✅ Task List */}
       <TaskList
         tasks={filteredTasks}
